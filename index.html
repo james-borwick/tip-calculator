@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Tip Calculator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        td,
+        th {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tip Calculator!!!</h1>
+    <form action="/results" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="bill">What is the bill?</label>
+                    </td>
+                    <td>
+                        £
+                        <input type="text" name="billForm" id="bill">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="percentage">What is the tip percentage?</label>
+                    </td>
+                    <td>
+                        <input type="text" name="percentageForm" id="percentage">
+                    </td>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit">
+    </form>
+    <p style="color: lightgray; text-align: right">James Borwick</p>
+</body>
+
+</html>

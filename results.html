@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Tip Calculator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid darkgray;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tip Calculator</h1>
+    <table>
+        <tbody>
+            <tr>
+                <td bgcolor="aliceblue">First Name</td>
+                <td>{{.First}}</td>
+            </tr>
+            <tr>
+                <td bgcolor="aliceblue">Last Name</td>
+                <td>{{.Last}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form>
+        <br>
+        <input type="button" value="Back" onclick="window.location.href='index.html'" />
+    </form>
+    <p style="color: lightgray; text-align: right">James Borwick</p>
+</body>
+
+</html>
