@@ -3,13 +3,14 @@ package tipCalculator
 import (
 	"html/template"
 	"net/http"
+	"strconv"
 )
 
-// Page is a struct
-type Page struct {
-	NameOne string
-	NameTwo string
-}
+var tip int
+var totalBill int
+var b int
+var p int
+var hundred int
 
 var tpl *template.Template
 
@@ -25,16 +26,27 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func processor(w http.ResponseWriter, r *http.Request) {
-	fname := r.FormValue("nameNumberOne")
-	lname := r.FormValue("nameNumberTwo")
+	billIn := r.FormValue("billInput")
+	percentageIn := r.FormValue("percentageInput")
+
+	b := billIn
+	p := percentageIn
+	hundred := 100
+
+	strconv.Atoi(b)
+	strconv.Atoi(p)
+
+	tip = (b / hundred) * p
+	totalBill = b + tip
 
 	d := struct {
-		First string
-		Last  string
-	}{
-		First: fname,
-		Last:  lname,
+		Tip       string
+		BillTotal string
 	}
+	//{
+		//Tip:       tip,
+		//BillTotal: totalBill,
+	//}
 
 	tpl.ExecuteTemplate(w, "processor.html", d)
 }
