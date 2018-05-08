@@ -8,9 +8,6 @@ import (
 
 var tip int
 var totalBill int
-var b int
-var p int
-var hundred int
 
 var tpl *template.Template
 
@@ -29,24 +26,25 @@ func processor(w http.ResponseWriter, r *http.Request) {
 	billIn := r.FormValue("billInput")
 	percentageIn := r.FormValue("percentageInput")
 
-	b := billIn
-	p := percentageIn
-	hundred := 100
+	b, _ := strconv.ParseFloat(billIn, 64)
+	p, _ := strconv.ParseFloat(percentageIn, 64)
 
-	strconv.Atoi(b)
-	strconv.Atoi(p)
+	tip := (b / 100) * p
+	totalBill := b + tip
 
-	tip = (b / hundred) * p
-	totalBill = b + tip
+	t := strconv.FormatFloat(tip, 'f', -1, 64)
+	tb := strconv.FormatFloat(totalBill, 'f', -1, 64)
+
+	tString := t
+	tbString := tb
 
 	d := struct {
 		Tip       string
 		BillTotal string
+	}{
+		Tip:       tString,
+		BillTotal: tbString,
 	}
-	//{
-		//Tip:       tip,
-		//BillTotal: totalBill,
-	//}
 
 	tpl.ExecuteTemplate(w, "processor.html", d)
 }
