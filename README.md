@@ -1,4 +1,4 @@
 # Tip Calculator
-My first app deployed via Google App Engine.
+Try it...
 
-https://sunny-buttress-203004.appspot.com
+https://tip-calculator-jborwick.appspot.com/process
