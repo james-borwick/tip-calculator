@@ -1,4 +1,4 @@
 # Tip Calculator
 Try it...
 
-https://tip-calculator-jborwick.appspot.com/process
+https://tip-calculator-jborwick.appspot.com
